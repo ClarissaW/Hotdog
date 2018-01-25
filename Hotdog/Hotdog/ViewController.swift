@@ -38,10 +38,21 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             visualRecognition.classify(imageFile: fileURL, success: { (classifiedImages) in
                 //print(classifiedImages)
                 let classes = classifiedImages.images.first!.classifiers.first!.classes
+                self.classificationResults = [] // if not including this line, it will continue to append into the array
                 for index in 0..<classes.count{
                     self.classificationResults.append(classes[index].classification)
                 }
                 print(self.classificationResults)
+                if self.classificationResults.contains("hotdog"){
+                    DispatchQueue.main.async {
+                        self.navigationItem.title = "Hotdog!"
+                    }
+                }
+                else{
+                    DispatchQueue.main.async {
+                        self.navigationItem.title = "Not Hotdog!"
+                    }
+                }
             })
             
         }else{
