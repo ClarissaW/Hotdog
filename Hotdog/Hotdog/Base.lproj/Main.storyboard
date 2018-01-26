@@ -18,16 +18,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4x2-bd-54d">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4x2-bd-54d" userLabel="Static Hotdog Image">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y9m-Vd-wNV">
+                                <rect key="frame" x="0.0" y="92" width="375" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="FRB-DB-j22"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="hotdogBackground" translatesAutoresizingMaskIntoConstraints="NO" id="IkT-my-v2p" userLabel="User Chosen Image">
+                                <rect key="frame" x="67" y="294" width="240" height="97"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDg-cs-vTM">
+                                <rect key="frame" x="138" y="436" width="98" height="55"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P8e-uO-I9x"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.83529411764705885" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IkT-my-v2p" secondAttribute="trailing" constant="68" id="1PP-vM-L5I"/>
+                            <constraint firstItem="IkT-my-v2p" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3N4-Ml-lDj"/>
+                            <constraint firstItem="Y9m-Vd-wNV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="3v2-ap-v4M"/>
                             <constraint firstItem="4x2-bd-54d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6sc-Ka-cdI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4x2-bd-54d" secondAttribute="bottom" id="AEM-6b-qum"/>
+                            <constraint firstItem="IkT-my-v2p" firstAttribute="top" secondItem="Y9m-Vd-wNV" secondAttribute="bottom" constant="74" id="BEj-LG-qDb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4x2-bd-54d" secondAttribute="trailing" id="Cuy-MM-Xmo"/>
+                            <constraint firstItem="IkT-my-v2p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y1x-XF-tUd"/>
+                            <constraint firstItem="nDg-cs-vTM" firstAttribute="centerX" secondItem="4x2-bd-54d" secondAttribute="centerX" id="YJf-7f-y16"/>
+                            <constraint firstItem="IkT-my-v2p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="eOx-k8-L3L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y9m-Vd-wNV" secondAttribute="trailing" id="pev-JW-le7"/>
+                            <constraint firstItem="nDg-cs-vTM" firstAttribute="top" secondItem="IkT-my-v2p" secondAttribute="bottom" constant="63" id="vcS-43-bkC"/>
                             <constraint firstItem="4x2-bd-54d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="x2V-Wb-0ju"/>
+                            <constraint firstItem="Y9m-Vd-wNV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zYR-lX-FG1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -41,6 +75,8 @@
                     <connections>
                         <outlet property="cameraButton" destination="mxw-Rd-cOf" id="gjb-vJ-dGd"/>
                         <outlet property="imageView" destination="4x2-bd-54d" id="fvt-pX-Ojn"/>
+                        <outlet property="shareButton" destination="nDg-cs-vTM" id="Yzq-7q-QsF"/>
+                        <outlet property="topBarImageView" destination="Y9m-Vd-wNV" id="Rme-Xz-8Pf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -55,6 +91,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QNd-gf-8M2">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -66,4 +105,7 @@
             <point key="canvasLocation" x="-232" y="111.54422788605699"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hotdogBackground" width="191" height="143"/>
+    </resources>
 </document>
